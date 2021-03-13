@@ -5,7 +5,7 @@
 { $currentDate: { <field1>: <typeSpecification1>, ... } }
 
 <typeSpecification> can be either:
-    1) a boolean true to set the field value to the current date as a Date, or
+    1) a boolean true to set the field value to the current date as a Date
     2) a document { $type: "timestamp" } or { $type: "date" } which explicitly specifies the type. The operator is case-sensitive and accepts only the lowercase "timestamp" or the lowercase "date".
 
 # If the field does not exist, $currentDate adds the field to a document.
