@@ -20,7 +20,7 @@
 
     ---------------------------OR----------------------------
 
-## y, let’s say that the base unit of points a player can earn is 50. We can use the "$inc" modifier to add 50 to the player’s score
+## let’s say that the base unit of points a player can earn is 50. We can use the "$inc" modifier to add 50 to the player’s score
 
 {
   "_id" : ObjectId("4b2d75476cc613d5ee930164"),
@@ -45,3 +45,22 @@
   "user" : "joe",
   "score" : 10050
 }
+
+    Note: 
+    1) The "$inc" operator can be used to change the value for an existing key or to create a new key if it does not already exist.
+    2) "$inc" can be used only on values of type integer, long, double, or decimal. If it is used on any other type of value, it will fail.
+
+>> db.strcounts.insert({"count" : "1"})
+WriteResult({ "nInserted" : 1 })
+>> db.strcounts.update({}, {"$inc" : {"count" : 1}})
+WriteResult({
+ "nMatched" : 0,
+ "nUpserted" : 0,
+ "nModified" : 0,
+ "writeError" : {
+ "code" : 16837,
+ "errmsg" : "Cannot apply $inc to a value of non-numeric type.
+ {_id: ObjectId('5726c0d36855a935cb57a659')} has the field 'count' of
+ non-numeric type String"
+ }
+})
