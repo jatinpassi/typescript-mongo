@@ -49,7 +49,7 @@
     Note: 
     1) The "$inc" operator can be used to change the value for an existing key or to create a new key if it does not already exist.
     2) "$inc" can be used only on values of type integer, long, double, or decimal. If it is used on any other type of value, it will fail.
-    3) 3) There is no "$dec" operator in MongoDB. We can use the same "$inc" to decrements the value.
+    3) There is no "$dec" operator in MongoDB. We can use the same "$inc" to decrements the value.
 
 >> db.strcounts.insert({"count" : "1"})
 WriteResult({ "nInserted" : 1 })
