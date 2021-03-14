@@ -16,11 +16,11 @@
   "title" : "A blog post",
   "content" : "...",
   "comments" : [
-  {
-  "name" : "joe",
-  "email" : "joe@example.com",
-  "content" : "nice post."
-  }
+    {
+      "name" : "joe",
+      "email" : "joe@example.com",
+      "content" : "nice post."
+    }
   ]
 }
 
@@ -32,15 +32,15 @@
   "title" : "A blog post",
   "content" : "...",
   "comments" : [
-  {
-  "name" : "joe",
-  "email" : "joe@example.com",
-  "content" : "nice post."
-  },
-  {
-  "name" : "bob",
-  "email" : "bob@example.com",
-  "content" : "good post."
-  }
+    {
+      "name" : "joe",
+      "email" : "joe@example.com",
+      "content" : "nice post."
+    },
+    {
+      "name" : "bob",
+      "email" : "bob@example.com",
+      "content" : "good post."
+    }
   ]
 }
