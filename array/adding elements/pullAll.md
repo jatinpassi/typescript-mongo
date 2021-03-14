@@ -15,3 +15,31 @@
   "_id" : 1, 
   "scores" : [ 2, 1 ] 
 }
+
+# order matters - 1
+{
+    user:user_name, 
+    streams:[
+        {user:user_a, name:name_a}, 
+        {user:user_b, name:name_b},
+        {user:user_c, name:name_c}
+    ]
+}
+
+>> db.streams.update({name:"user_name", {"$pullAll:{streams:[{user:"user_a", name:"name_a"},{user:"user_b", name:"name_b"}]}})
+
+## This will work {user:"user_a", name:"name_a"}and {user:"user_b", name:"name_b"} match the order
+
+# order matters - 2
+{
+    user:user_name, 
+    streams:[
+        {user:user_a, name:name_a}, 
+        {user:user_b, name:name_b},
+        {user:user_c, name:name_c}
+    ]
+}
+
+>> db.streams.update({name:"user_name", {"$pullAll:{streams:[{name:"name_a", user:"user_a"},{name:"name_b", user:"user_b"}]}})
+
+## This will not work because none {name:"name_a", user:"user_a"},{name:"name_b", user:"user_b"} matches the order.
