@@ -59,3 +59,11 @@
   item: "cable",
   tags: [ "electronics", "supplies", "camera", "accessories" ]
 }
+
+# using push operator as addToSet
+
+db.papers.updateOne({"authors cited" : {"$ne" : "Richie"}}, {$push : {"authors cited" : "Richie"}})
+
+    This can be done using "$ne" in the query document. 
+
+    You can also use "$addToSet" in conjunction with "$each" to add multiple unique values, which cannot be done with the "$ne"/"$push" combination.
